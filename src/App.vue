@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app">
     <g-button></g-button>
     <g-button icon="setting">点击</g-button>
     <g-button icon="setting">点击</g-button>
@@ -10,12 +10,20 @@
               @click=" loading = !loading">
     </g-button>
 
+    <g-button-group>
+      <g-button icon="left">上一页</g-button>
+      <g-button>其他</g-button>
+      <g-button icon="right"
+                iconPosition="right">下一页</g-button>
+    </g-button-group>
+
   </div>
 </template>
 
 <script>
 import Button from "./component/button/Button.vue"
 import Icon from "./component/icon/Icon.vue";
+import ButtonGroup from "./component/button/ButtonGroup.vue";
 export default {
   name: 'App',
   data () {
@@ -25,7 +33,8 @@ export default {
   },
   components: {
     "g-button": Button,
-    "g-icon": Icon
+    "g-icon": Icon,
+    'g-button-group': ButtonGroup
   },
   methods: {
 
@@ -36,7 +45,7 @@ export default {
 <style scoped lang="less">
 @import './assets/css/reset.css';
 @import './assets/css/base.css';
-div {
+.app {
   margin: 100px;
 }
 </style>

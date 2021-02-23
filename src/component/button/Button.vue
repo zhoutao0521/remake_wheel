@@ -82,6 +82,8 @@ export default {
 }
 
 .g-button:hover {
+  position: relative;
+  z-index: 1;
   border: 1px solid var(--border-color-hover);
 }
 
