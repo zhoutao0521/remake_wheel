@@ -1,5 +1,5 @@
 <template>
-  <i :class="['iconfont',`i-${icon}`,'g-icon']"></i>
+  <i :class="['iconfont',`i-${icon}`,'g-icon',icon==='loading'?'loading':null]"></i>
 </template>
 
 <script>
@@ -7,12 +7,7 @@ export default {
   name: 'Icon',
   props: {
     icon: {
-      type: String,
-      default: "1",
-      validator: value => {
-        console.log(value);
-        return true;
-      }
+      type: String
     }
   },
   data () {
@@ -29,5 +24,18 @@ export default {
 <style scoped lang="less">
 .g-icon {
   font-size: 1rem;
+}
+
+@keyframes turning {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  animation: turning 4s infinite linear;
 }
 </style>

@@ -1,9 +1,10 @@
 <template>
-  <button class="g-button">
+  <button class="g-button"
+          :class="{[`icon-${iconPosition}`]:!!icon}">
     <g-icon v-if="icon"
             :icon="icon"
-            :class="[iconPosition==='left'?'i-left':'i-right']"></g-icon>
-    <div :class="['content',iconPosition==='left'?'c-left':'c-right']">
+            class="icon"></g-icon>
+    <div class="content">
       <slot>button</slot>
     </div>
   </button>
@@ -52,20 +53,21 @@ export default {
   border-radius: var(--border-radius);
   border: 1px solid var(--border-color);
   background-color: var(--button-bg);
-  & > .i-left {
-    order: 1;
+  &.icon-left {
+    .icon {
+      order: 1;
+    }
+    .content {
+      order: 2;
+    }
   }
-
-  & > .c-left {
-    order: 2;
-  }
-
-  & > .i-right {
-    order: 2;
-  }
-
-  & > .c-right {
-    order: 1;
+  &.icon-right {
+    .icon {
+      order: 2;
+    }
+    .content {
+      order: 1;
+    }
   }
 }
 
