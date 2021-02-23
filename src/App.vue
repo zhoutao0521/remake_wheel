@@ -1,6 +1,5 @@
 <template>
   <div>
-    {{name}}
     <g-button></g-button>
   </div>
 </template>
@@ -25,7 +24,8 @@ export default {
 
 <style scoped lang="less">
 @import './assets/css/reset.css';
+@import './assets/css/base.css';
 div {
-  background-color: pink;
+  margin: 100px;
 }
 </style>
