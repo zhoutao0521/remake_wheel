@@ -1,12 +1,12 @@
 <template>
-  <i :class="['iconfont',`i-${icon}`,'g-icon',icon==='loading'?'loading':null]"></i>
+  <i :class="['iconfont',`i-${name}`,'g-icon',name==='loading'?'loading':null]"></i>
 </template>
 
 <script>
 export default {
   name: 'Icon',
   props: {
-    icon: {
+    name: {
       type: String
     }
   },
@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style scoped lang="less">
-.g-icon {
+.icon {
   font-size: 1rem;
 }
 

@@ -2,19 +2,14 @@
   <div>
     <g-button></g-button>
     <g-button icon="setting">点击</g-button>
-    <g-button icon="setting"
-              iconPosition="left">点击</g-button>
+    <g-button icon="setting">点击</g-button>
     <g-button icon="setting"
               iconPosition="right">点击</g-button>
-    <g-button icon="loading"
-              iconPosition="left">
-      <g-icon icon="left"></g-icon>
-      <g-icon icon="left"></g-icon>加载中
+    <g-button iconPosition="left"
+              :loading="loading"
+              @click=" loading = !loading">
     </g-button>
-    <svg>
-      <use xlink:href="#i-download"></use>
-    </svg>
-    <g-icon icon="left"></g-icon>
+
   </div>
 </template>
 
@@ -25,7 +20,7 @@ export default {
   name: 'App',
   data () {
     return {
-
+      loading: true
     };
   },
   components: {

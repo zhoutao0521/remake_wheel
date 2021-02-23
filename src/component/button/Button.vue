@@ -1,8 +1,12 @@
 <template>
   <button class="g-button"
-          :class="{[`icon-${iconPosition}`]:!!icon}">
-    <g-icon v-if="icon"
-            :icon="icon"
+          :class="{[`icon-${iconPosition}`]:!!icon}"
+          @click="$emit('click')">
+    <g-icon v-if="icon && !loading"
+            :name="icon"
+            class="icon"></g-icon>
+    <g-icon v-if="loading"
+            name="loading"
             class="icon"></g-icon>
     <div class="content">
       <slot>button</slot>
@@ -25,6 +29,10 @@ export default {
       validator: value => {
         return value === "right" || value === "left"
       }
+    },
+    loading: {
+      type: Boolean,
+      default: false
     }
   },
   components: {
@@ -56,6 +64,7 @@ export default {
   &.icon-left {
     .icon {
       order: 1;
+      margin-right: 0.1rem;
     }
     .content {
       order: 2;
@@ -64,6 +73,7 @@ export default {
   &.icon-right {
     .icon {
       order: 2;
+      margin-left: 0.1rem;
     }
     .content {
       order: 1;
