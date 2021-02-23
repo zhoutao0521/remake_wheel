@@ -1,20 +1,21 @@
 <template>
   <div>
+
     <g-button></g-button>
   </div>
 </template>
 
 <script>
-import GButton from "./component/g-button.vue"
+import Button from "./component/button/Button.vue"
 export default {
   name: 'App',
   data () {
     return {
-      name: "lz"
+
     };
   },
   components: {
-    "g-button": GButton
+    "g-button": Button
   },
   methods: {
 

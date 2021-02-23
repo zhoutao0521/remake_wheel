@@ -1,6 +1,6 @@
 <template>
   <button class="g-button">
-    按钮
+    <slot>button</slot>
   </button>
 </template>
 
